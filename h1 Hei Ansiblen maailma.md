@@ -1,4 +1,4 @@
-#h1 Hei Ansiblen maailma
+# h1 Hei Ansiblen maailma
 
 a) Sshecrets. Asenna SSH-demonin asennus ja testaus
 Tarkoituksena on asentaa OpenSSH‑server paketti komennoilla:sudo apt-get update ja sudo apt-get -y install ssh. 
