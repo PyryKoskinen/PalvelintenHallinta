@@ -11,6 +11,7 @@ ssh antero@localhost
 sudo -k sudo echo 
 "See you at TeroKarvinen.com"
 Komennon suoritus onnistui ilman salasanakyselyä, ja tuloste näkyi odotetusti
+
 <img width="684" height="80" alt="image" src="https://github.com/user-attachments/assets/d9890e18-3d11-45d4-9fe0-2de61b2076bd" />
 
 
