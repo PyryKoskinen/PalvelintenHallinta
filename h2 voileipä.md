@@ -95,4 +95,9 @@ Alla oleva esimerkki varmistaa että cron palvelu on käynnissä ja käynnistyy 
 
 <img width="550" height="117" alt="image" src="https://github.com/user-attachments/assets/4aaa5399-3d92-4db3-821e-824e8c950875" />
 
+# Lähteet
 
+Karvinen, Tero. 2026. SSH public key - Login without password. https://terokarvinen.com/ssh-public-key-login-without-password/
+Karvinen, Tero. 2026. Hello Ansible. https://terokarvinen.com/hello-ansible/
+Karvinen, Tero. 2026. Sudo without password. https://terokarvinen.com/passwordless-sudo/
+Karvinen, Tero. 2026. Passwordless Sudo with Ansible. https://terokarvinen.com/passwordless-sudo-with-ansible/
