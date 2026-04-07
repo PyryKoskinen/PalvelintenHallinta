@@ -1,6 +1,7 @@
 # h2 voileipä
 
 1. Sudo without password
+   
 Ansible tarvitsee root oikeudet orjakoneella, yksi tapa on tehdä käyttäjälle salasanaton sudo (NOPASSWD).
 
 Rooli luo ryhmän sudoless, lisää käyttäjän tähän ryhmään ja asentaa sudoers tiedoston /etc/sudoers.d/sudoless
