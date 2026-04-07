@@ -24,5 +24,11 @@ Tämän jälkeen aloin tekemään tarvittavat konfiguraatiot.Aloitin tekemällä
 Seuraavaksi määrittelin kohdekoneen hosts.ini‑tiedostoon; tässä tapauksessa käytin pelkkää localhost, jotta roolia voi testata omalla koneella.
 Seuraavaksi tein site.yml‑playbookin. Tähän lisättiin tärkeä rivi become: true, koska tehtävät vaativat root‑oikeuksia. Ilman tätä Ansible ei pystyisi luomaan käyttäjiä, ryhmiä eikä muokkaamaan /etc/sudoers.d/‑hakemistoa.
 Viimeiseksi loin projektin ytimen eli roolin antero, jonka sisällä on neljä peräkkäistä tehtävää: <img width="826" height="460" alt="image" src="https://github.com/user-attachments/assets/58811637-6a7a-4449-bc93-0e4b7fa1535d" />
-ansible lopputulostus <img width="1267" height="656" alt="image" src="https://github.com/user-attachments/assets/83857ed1-9303-41d3-a25d-a40685ef91ad" />
+
+ansible lopputulostus 
+<img width="1267" height="656" alt="image" src="https://github.com/user-attachments/assets/83857ed1-9303-41d3-a25d-a40685ef91ad" />
+huomasin myös että Ansible ei tue komentoa:
+--ask-become-password.
+Toimiva muoto on:
+--ask-become-pass
 
