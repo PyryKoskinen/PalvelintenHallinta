@@ -42,3 +42,16 @@ riippumatta käytettävästä pakettienhallinnasta. Asensin paketit curl ja htop
 
 
 Playbook ajettiin komennolla ansible-playbook site.yml --ask-become-pass, jotta Ansible pystyi asentamaan paketit root-oikeuksilla.
+
+d) tarkoituksena oli kirjoittaa kohdekoneelle monirivinen tiedosto 
+sekä määritellä sen omistaja, ryhmä ja käyttöoikeudet oktalimuodossa. 
+Loin tiedoston copy-moduulilla seuraavasti:
+
+<img width="412" height="182" alt="image" src="https://github.com/user-attachments/assets/e0855112-b88b-4488-ba08-dca1f8874b6b" />
+Oktalimuoto '0640' vastaa symbolisesti '-rw-r-----'. 
+Tämä tarkoittaa, että omistaja (anteroo) saa lukea ja kirjoittaa tiedostoa, 
+ryhmä (sudoless) saa ainoastaan lukea sen, ja muilla käyttäjillä 
+ei ole lainkaan oikeuksia tiedostoon.
+
+<img width="696" height="42" alt="image" src="https://github.com/user-attachments/assets/731ea797-aaf6-485c-b1b5-fab89adab7f3" />
+
