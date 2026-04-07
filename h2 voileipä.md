@@ -2,28 +2,28 @@
 
 1. Sudo without password
    
-Ansible tarvitsee root oikeudet orjakoneella, yksi tapa on tehdä käyttäjälle salasanaton sudo (NOPASSWD).
+   Ansible tarvitsee root oikeudet orjakoneella, yksi tapa on tehdä käyttäjälle salasanaton sudo (NOPASSWD).
 
-Rooli luo ryhmän sudoless, lisää käyttäjän tähän ryhmään ja asentaa sudoers tiedoston /etc/sudoers.d/sudoless
+   Rooli luo ryhmän sudoless, lisää käyttäjän tähän ryhmään ja asentaa sudoers tiedoston /etc/sudoers.d/sudoless
 
-Avaa varmuuden vuoksi root-shell komennolla sudo -i, jos muokkaat sudo-asetuksia. Älä kuitenkaan työskentele root-shellissa, vaan pidä se auki varalla ja jatka työskentelyä normaalissa käyttäjäikkunassa.
+   Avaa varmuuden vuoksi root-shell komennolla sudo -i, jos muokkaat sudo-asetuksia. Älä kuitenkaan työskentele root-shellissa, vaan pidä se auki varalla ja jatka työskentelyä normaalissa käyttäjäikkunassa.
 
-Sudoers‑rivi on: %sudoless ALL=(ALL) NOPASSWD: ALL, mikä tarkoittaa, että ryhmän jäsenet voivat ajaa mitä tahansa komentoja sudolla kysymättä salasanaa.
-
-Oma huomio: Hyvä käytäntö on aina käyttää /etc/sudoers.d/–hakemistoa eikä koskea itse pääsudoers-tiedostoon, jotta virheet ovat helpommin korjattavissa.
+   Sudoers‑rivi on: %sudoless ALL=(ALL) NOPASSWD: ALL, mikä tarkoittaa, että ryhmän jäsenet voivat ajaa mitä tahansa komentoja sudolla kysymättä salasanaa.
+   
+   Oma huomio: Hyvä käytäntö on aina käyttää /etc/sudoers.d/–hakemistoa eikä koskea itse pääsudoers-tiedostoon, jotta virheet ovat helpommin korjattavissa.
 
 3. Ilman sudoa pyyntö ohitetaan (“tee itse”), mutta kun komento annetaan sudon kanssa, se toteutetaan heti.
    
 5. Passwordless sudo with ansible
    
-Ennen automaatiota kannattaa testata passwordless sudo käsin (“Manual before auto”)
+   Ennen automaatiota kannattaa testata passwordless sudo käsin (“Manual before auto”)
 
-Avataan sudoers‑tiedosto turvallisesti visudo‑komennolla (tarkistaa syntaksin).
+   Avataan sudoers‑tiedosto turvallisesti visudo‑komennolla (tarkistaa syntaksin).
 
-Aluksi sudo ilman salasanaa ei ole vielä käytössä. Pitää lisätä site.yml-tiedostoon become: true, jotta Ansible yrittää käyttää sudoa. Ensimmäisellä ajolla Ansible pyytää sudo salasanaa, joten suoritettava playbook komennolla --ask-become-password
-Jos salasanaa ei kysytä  passwordless sudo toimii.
+   Aluksi sudo ilman salasanaa ei ole vielä käytössä. Pitää lisätä site.yml-tiedostoon become: true, jotta Ansible yrittää käyttää sudoa. Ensimmäisellä ajolla Ansible pyytää sudo salasanaa, joten suoritettava playbook komennolla --ask-become-password
+   Jos salasanaa ei kysytä  passwordless sudo toimii.
 
-Oma kysymys: Voidaanko rajoittaa, että tietyllä ryhmällä on NOPASSWD‑oikeudet vain tiettyihin komentoihin, eikä kaikkiin?
+   Oma kysymys: Voidaanko rajoittaa, että tietyllä ryhmällä on NOPASSWD‑oikeudet vain tiettyihin komentoihin, eikä kaikkiin?
 
 a) Aloitin tehtävän varmistamalla, että SSH-yhteys sekä Ansible toimivat oikein. Tämän jälkeen aloitin tehtävän teon, toteutus sisälsi useita vaiheita. Ensiksi loin uuden käyttäjäryhmän nimeltä sudoless. Tämän jälkeen loin käyttäjän nimeltä anteroo ja lisäsin hänet ryhmään sudoless. Tehtävässä harjoiteltiin myös virhetilanteeseen varautumista jossa sudo-toiminnallisuus rikkoutuu. 
 
