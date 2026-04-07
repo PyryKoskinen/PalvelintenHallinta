@@ -48,10 +48,17 @@ sekä määritellä sen omistaja, ryhmä ja käyttöoikeudet oktalimuodossa.
 Loin tiedoston copy-moduulilla seuraavasti:
 
 <img width="412" height="182" alt="image" src="https://github.com/user-attachments/assets/e0855112-b88b-4488-ba08-dca1f8874b6b" />
+
 Oktalimuoto '0640' vastaa symbolisesti '-rw-r-----'. 
 Tämä tarkoittaa, että omistaja (anteroo) saa lukea ja kirjoittaa tiedostoa, 
 ryhmä (sudoless) saa ainoastaan lukea sen, ja muilla käyttäjillä 
 ei ole lainkaan oikeuksia tiedostoon.
 
 <img width="696" height="42" alt="image" src="https://github.com/user-attachments/assets/731ea797-aaf6-485c-b1b5-fab89adab7f3" />
+
+e) Tehtävässä tarkoituksena oli testata ja näyttää jokin uusi Ansible käsky tai moduuli. Löysin esimerkiksi service-moduulin, jolla voiaan hallita Linux-palveluita. 
+Alla oleva esimerkki varmistaa että cron palvelu on käynnissä ja käynnistyy automaattisesti tietokoneen boottauksen yhteydessä:
+
+<img width="550" height="117" alt="image" src="https://github.com/user-attachments/assets/4aaa5399-3d92-4db3-821e-824e8c950875" />
+
 
