@@ -16,6 +16,7 @@ Komennon suoritus onnistui ilman salasanakyselyä, ja tuloste näkyi odotetusti
 
 b)  Tavoite Ansible tarvitsee root-oikeudet etäpalvelimella. Ratkaisuna luodaan käyttäjä, joka voi käyttää sudoa ilman salasanan pyyntöä.
 Ensimmäinen vaihe oli luoda Ansible‑projektille selkeä hakemistorakenne. <img width="517" height="264" alt="image" src="https://github.com/user-attachments/assets/8d965190-741e-4ace-9c61-3841a73312ba" />
+
 Tämän jälkeen aloin tekemään tarvittavat konfiguraatiot.Aloitin tekemällä yksinkertaisen ansible.cfg‑tiedoston, joka ohjaa Ansiblea käyttämään projektin omaa hosts.ini‑tiedostoa ja estää host key ‑varmistukset. <img width="491" height="78" alt="image" src="https://github.com/user-attachments/assets/52e17257-7f0e-4fdd-89c6-70a2ae9e6bf7" /> 
 Seuraavaksi määrittelin kohdekoneen hosts.ini‑tiedostoon; tässä tapauksessa käytin pelkkää localhost, jotta roolia voi testata omalla koneella.
 Seuraavaksi tein site.yml‑playbookin. Tähän lisättiin tärkeä rivi become: true, koska tehtävät vaativat root‑oikeuksia. Ilman tätä Ansible ei pystyisi luomaan käyttäjiä, ryhmiä eikä muokkaamaan /etc/sudoers.d/‑hakemistoa.
