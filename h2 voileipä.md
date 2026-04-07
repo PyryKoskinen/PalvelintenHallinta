@@ -25,7 +25,7 @@
 
    Oma kysymys: Voidaanko rajoittaa, että tietyllä ryhmällä on NOPASSWD‑oikeudet vain tiettyihin komentoihin, eikä kaikkiin?
 
-# a) 
+# a) Sudo without password
 
 Aloitin tehtävän varmistamalla, että SSH-yhteys sekä Ansible toimivat oikein. Tämän jälkeen aloitin tehtävän teon, toteutus sisälsi useita vaiheita. Ensiksi loin uuden käyttäjäryhmän nimeltä sudoless. Tämän jälkeen loin käyttäjän nimeltä anteroo ja lisäsin hänet ryhmään sudoless. Tehtävässä harjoiteltiin myös virhetilanteeseen varautumista jossa sudo-toiminnallisuus rikkoutuu. 
 
@@ -44,7 +44,7 @@ Komennon suoritus onnistui ilman salasanakyselyä, ja tuloste näkyi odotetusti
 
 <img width="684" height="80" alt="image" src="https://github.com/user-attachments/assets/d9890e18-3d11-45d4-9fe0-2de61b2076bd" />
 
-# b)  
+# b) Passwordless Sudo with Ansible 
 
 Tavoite Ansible tarvitsee root-oikeudet etäpalvelimella. Ratkaisuna luodaan käyttäjä, joka voi käyttää sudoa ilman salasanan pyyntöä.
 Ensimmäinen vaihe oli luoda Ansible‑projektille selkeä hakemistorakenne. <img width="517" height="264" alt="image" src="https://github.com/user-attachments/assets/8d965190-741e-4ace-9c61-3841a73312ba" />
@@ -64,7 +64,7 @@ huomasin myös että Ansible ei tue komentoa:
 Toimiva muoto on:
 --ask-become-pass
 
-# c) 
+# c) Pakettien asennus
 
 Tehtävässä oli tarkoitus asentaa kaksi pakettia Ansiblella. Lisäsin nämä tehtävät rooliin "world" tiedostoon roles/world/tasks/main.yml. Käytin Ansible package moduulia, joka toimii eri Linux-jakeluissa 
 riippumatta käytettävästä pakettienhallinnasta. Asensin paketit curl ja htop seuraavasti: 
@@ -74,7 +74,7 @@ riippumatta käytettävästä pakettienhallinnasta. Asensin paketit curl ja htop
 
 Playbook ajettiin komennolla ansible-playbook site.yml --ask-become-pass, jotta Ansible pystyi asentamaan paketit root-oikeuksilla.
 
-# d) 
+# d) File
 
 tarkoituksena oli kirjoittaa kohdekoneelle monirivinen tiedosto 
 sekä määritellä sen omistaja, ryhmä ja käyttöoikeudet oktalimuodossa. 
@@ -89,7 +89,8 @@ ei ole lainkaan oikeuksia tiedostoon.
 
 <img width="696" height="42" alt="image" src="https://github.com/user-attachments/assets/731ea797-aaf6-485c-b1b5-fab89adab7f3" />
 
-# e) 
+# e) Mitä vaan
+
 Tarkoituksena oli testata ja näyttää jokin uusi Ansible käsky tai moduuli. Löysin esimerkiksi service moduulin, jolla voidaan hallita Linux palveluita. 
 Alla oleva esimerkki varmistaa että cron palvelu on käynnissä ja käynnistyy automaattisesti tietokoneen boottauksen yhteydessä:
 
