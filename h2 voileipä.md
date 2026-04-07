@@ -56,7 +56,7 @@ ei ole lainkaan oikeuksia tiedostoon.
 
 <img width="696" height="42" alt="image" src="https://github.com/user-attachments/assets/731ea797-aaf6-485c-b1b5-fab89adab7f3" />
 
-e) Tehtävässä tarkoituksena oli testata ja näyttää jokin uusi Ansible käsky tai moduuli. Löysin esimerkiksi service-moduulin, jolla voiaan hallita Linux-palveluita. 
+e) Tehtävässä tarkoituksena oli testata ja näyttää jokin uusi Ansible käsky tai moduuli. Löysin esimerkiksi service moduulin, jolla voidaan hallita Linux palveluita. 
 Alla oleva esimerkki varmistaa että cron palvelu on käynnissä ja käynnistyy automaattisesti tietokoneen boottauksen yhteydessä:
 
 <img width="550" height="117" alt="image" src="https://github.com/user-attachments/assets/4aaa5399-3d92-4db3-821e-824e8c950875" />
