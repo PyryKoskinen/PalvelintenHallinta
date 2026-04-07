@@ -7,8 +7,8 @@ Avaa varmuuden vuoksi root-shell komennolla sudo -i, jos muokkaat sudo-asetuksia
 Sudoers‑rivi on:
 %sudoless ALL=(ALL) NOPASSWD: ALL, mikä tarkoittaa, että ryhmän jäsenet voivat ajaa mitä tahansa komentoja sudolla kysymättä salasanaa.
 Oma huomio: Hyvä käytäntö on aina käyttää /etc/sudoers.d/–hakemistoa eikä koskea itse pääsudoers-tiedostoon, jotta virheet ovat helpommin korjattavissa.
-
-2. Passwordless sudo with ansible 
+2. Ilman sudoa pyyntö ohitetaan (“tee itse”), mutta kun komento annetaan sudon kanssa, se toteutetaan heti.
+3. Passwordless sudo with ansible 
 Ennen automaatiota kannattaa testata passwordless sudo käsin (“Manual before auto”)
 Avataan sudoers‑tiedosto turvallisesti visudo‑komennolla (tarkistaa syntaksin).
 Aluksi sudo ilman salasanaa ei ole vielä käytössä. Pitää lisätä site.yml-tiedostoon become: true, jotta Ansible yrittää käyttää sudoa. Ensimmäisellä ajolla Ansible pyytää sudo salasanaa, joten suoritettava playbook komennolla --ask-become-password
