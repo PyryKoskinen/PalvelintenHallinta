@@ -25,7 +25,7 @@
 
    Oma kysymys: Voidaanko rajoittaa, että tietyllä ryhmällä on NOPASSWD‑oikeudet vain tiettyihin komentoihin, eikä kaikkiin?
 
-a) Aloitin tehtävän varmistamalla, että SSH-yhteys sekä Ansible toimivat oikein. Tämän jälkeen aloitin tehtävän teon, toteutus sisälsi useita vaiheita. Ensiksi loin uuden käyttäjäryhmän nimeltä sudoless. Tämän jälkeen loin käyttäjän nimeltä anteroo ja lisäsin hänet ryhmään sudoless. Tehtävässä harjoiteltiin myös virhetilanteeseen varautumista jossa sudo-toiminnallisuus rikkoutuu. 
+# a) Aloitin tehtävän varmistamalla, että SSH-yhteys sekä Ansible toimivat oikein. Tämän jälkeen aloitin tehtävän teon, toteutus sisälsi useita vaiheita. Ensiksi loin uuden käyttäjäryhmän nimeltä sudoless. Tämän jälkeen loin käyttäjän nimeltä anteroo ja lisäsin hänet ryhmään sudoless. Tehtävässä harjoiteltiin myös virhetilanteeseen varautumista jossa sudo-toiminnallisuus rikkoutuu. 
 
 On tärkeää pitää mielessä että jos sudoa käytetään järjestelmän hallintaan, sen virheellinen konfigurointi voi estää kokonaan pääsyn korjaustoimenpiteisiin normaalin käyttäjän kautta. Tämän riskin ehkäisemiseksi avasin uuden terminaali-ikkunan ja muodostettiin SSH-yhteys kohdekoneeseen. Tämän jälkeen avattiin erillinen pääkäyttäjän (root) komennolla: sudo -i.
 Seuraavaksi tavoitteena oli luoda uusi sudoers-sääntö, jonka avulla sudoless-ryhmän jäsenet voivat käyttää sudo-komentoja ilman salasanan syöttämistä. 
@@ -42,7 +42,7 @@ Komennon suoritus onnistui ilman salasanakyselyä, ja tuloste näkyi odotetusti
 
 <img width="684" height="80" alt="image" src="https://github.com/user-attachments/assets/d9890e18-3d11-45d4-9fe0-2de61b2076bd" />
 
-b)  Tavoite Ansible tarvitsee root-oikeudet etäpalvelimella. Ratkaisuna luodaan käyttäjä, joka voi käyttää sudoa ilman salasanan pyyntöä.
+# b)  Tavoite Ansible tarvitsee root-oikeudet etäpalvelimella. Ratkaisuna luodaan käyttäjä, joka voi käyttää sudoa ilman salasanan pyyntöä.
 Ensimmäinen vaihe oli luoda Ansible‑projektille selkeä hakemistorakenne. <img width="517" height="264" alt="image" src="https://github.com/user-attachments/assets/8d965190-741e-4ace-9c61-3841a73312ba" />
 
 Tämän jälkeen aloin tekemään tarvittavat konfiguraatiot.Aloitin tekemällä yksinkertaisen ansible.cfg‑tiedoston, joka ohjaa Ansiblea käyttämään projektin omaa hosts.ini‑tiedostoa ja estää host key ‑varmistukset.
