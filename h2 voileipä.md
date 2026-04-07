@@ -33,5 +33,7 @@ Toimiva muoto on:
 --ask-become-pass
 
 c) Tehtävässä oli tarkoitus asentaa kaksi pakettia Ansiblella. Lisäsin nämä tehtävät rooliin "world" tiedostoon roles/world/tasks/main.yml. Käytin Ansible package moduulia, joka toimii eri Linux-jakeluissa 
-riippumatta käytettävästä pakettienhallinnasta. Asensin paketit curl ja htop seuraavasti: <img width="813" height="460" alt="image" src="https://github.com/user-attachments/assets/c1a49e15-1444-4c53-b4a2-eadfca7988e8" />
+riippumatta käytettävästä pakettienhallinnasta. Asensin paketit curl ja htop seuraavasti: 
+<img width="813" height="460" alt="image" src="https://github.com/user-attachments/assets/c1a49e15-1444-4c53-b4a2-eadfca7988e8" />
+
 Playbook ajettiin komennolla ansible-playbook site.yml --ask-become-pass, jotta Ansible pystyi asentamaan paketit root-oikeuksilla.
