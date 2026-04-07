@@ -64,7 +64,9 @@ huomasin myös että Ansible ei tue komentoa:
 Toimiva muoto on:
 --ask-become-pass
 
-c) Tehtävässä oli tarkoitus asentaa kaksi pakettia Ansiblella. Lisäsin nämä tehtävät rooliin "world" tiedostoon roles/world/tasks/main.yml. Käytin Ansible package moduulia, joka toimii eri Linux-jakeluissa 
+# c) 
+
+Tehtävässä oli tarkoitus asentaa kaksi pakettia Ansiblella. Lisäsin nämä tehtävät rooliin "world" tiedostoon roles/world/tasks/main.yml. Käytin Ansible package moduulia, joka toimii eri Linux-jakeluissa 
 riippumatta käytettävästä pakettienhallinnasta. Asensin paketit curl ja htop seuraavasti: 
 
 <img width="818" height="462" alt="image" src="https://github.com/user-attachments/assets/60fe7fc4-b4c9-45ab-b7e4-4aaeb8c8a40e" />
@@ -72,7 +74,9 @@ riippumatta käytettävästä pakettienhallinnasta. Asensin paketit curl ja htop
 
 Playbook ajettiin komennolla ansible-playbook site.yml --ask-become-pass, jotta Ansible pystyi asentamaan paketit root-oikeuksilla.
 
-d) tarkoituksena oli kirjoittaa kohdekoneelle monirivinen tiedosto 
+# d) 
+
+tarkoituksena oli kirjoittaa kohdekoneelle monirivinen tiedosto 
 sekä määritellä sen omistaja, ryhmä ja käyttöoikeudet oktalimuodossa. 
 Loin tiedoston copy-moduulilla seuraavasti:
 
@@ -85,7 +89,8 @@ ei ole lainkaan oikeuksia tiedostoon.
 
 <img width="696" height="42" alt="image" src="https://github.com/user-attachments/assets/731ea797-aaf6-485c-b1b5-fab89adab7f3" />
 
-e) Tehtävässä tarkoituksena oli testata ja näyttää jokin uusi Ansible käsky tai moduuli. Löysin esimerkiksi service moduulin, jolla voidaan hallita Linux palveluita. 
+# e) 
+Tarkoituksena oli testata ja näyttää jokin uusi Ansible käsky tai moduuli. Löysin esimerkiksi service moduulin, jolla voidaan hallita Linux palveluita. 
 Alla oleva esimerkki varmistaa että cron palvelu on käynnissä ja käynnistyy automaattisesti tietokoneen boottauksen yhteydessä:
 
 <img width="550" height="117" alt="image" src="https://github.com/user-attachments/assets/4aaa5399-3d92-4db3-821e-824e8c950875" />
