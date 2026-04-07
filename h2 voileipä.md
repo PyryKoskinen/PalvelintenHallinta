@@ -1,4 +1,4 @@
-#h2 voileipä
+# h2 voileipä
 
 1. Sudo without password
 Ansible tarvitsee root oikeudet orjakoneella, yksi tapa on tehdä käyttäjälle salasanaton sudo (NOPASSWD).
