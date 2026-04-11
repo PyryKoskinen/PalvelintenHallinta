@@ -12,9 +12,9 @@
    
    Oma huomio: Hyvä käytäntö on aina käyttää /etc/sudoers.d/–hakemistoa eikä koskea itse pääsudoers-tiedostoon, jotta virheet ovat helpommin korjattavissa.
 
-3. Ilman sudoa pyyntö ohitetaan (“tee itse”), mutta kun komento annetaan sudon kanssa, se toteutetaan heti.
+2. Ilman sudoa pyyntö ohitetaan (“tee itse”), mutta kun komento annetaan sudon kanssa, se toteutetaan heti.
    
-5. Passwordless sudo with ansible
+3. Passwordless sudo with ansible
    
    Ennen automaatiota kannattaa testata passwordless sudo käsin (“Manual before auto”)
 
@@ -24,6 +24,18 @@
    Jos salasanaa ei kysytä  passwordless sudo toimii.
 
    Oma kysymys: Voidaanko rajoittaa, että tietyllä ryhmällä on NOPASSWD‑oikeudet vain tiettyihin komentoihin, eikä kaikkiin?
+
+4. ansible-doc komennot
+   
+   ansible-doc copy: Kopioi tiedoston ohjauskoneelta kohdekoneelle tai kirjoittaa sisällön tiedostoon Ansiblella.
+   
+   ansible-doc apt: Hallitsee Debian/Ubuntu‑tyyppisten järjestelmien paketteja.
+   
+   ansible-doc file: Hallitsee tiedostojen ja hakemistojen olemassaoloa sekä oikeuksia.
+   
+   ansible-doc user: Hallitsee käyttäjien luontia, poistoa ja asetuksia.
+   
+   ansible-doc authorized_key: Lisää käyttäjän ~/.ssh/authorized_keys‑tiedostoon SSH‑avaimen.
 
 # a) Sudo without password
 
