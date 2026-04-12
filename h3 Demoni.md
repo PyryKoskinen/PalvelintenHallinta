@@ -87,13 +87,13 @@ Asennuksen jälkeen tarkistin, että Nginx saatiin käynnistettyä ja että se p
 
 Jotta verkkosivua voisi muokata tavallisena käyttäjänä ilman sudo‑oikeuksia, sijoitetin sivuston käyttäjän(pyryk) kotihakemistoon. Loin käyttäjän kotihakemistoon erillisen publicsite hakemiston ja lisäsin sinne index.html‑tiedoston. Jolla pystyi varmistamaan, että oikea sivu latautuu selaimessa. 
 
-` nano /home/pyryk/publicsite/index.html
+`nano /home/pyryk/publicsite/index.html`
 
 <img width="818" height="424" alt="image" src="https://github.com/user-attachments/assets/f346491b-ee85-47bc-a906-e4963a08d834" />
 
 Hakemiston ja tiedostojen omistajaksi asetettiin käyttäjä, jolla terminaali normaalisti avautuu, jotta sivua voidaan muokata ilman erityisoikeuksia.
 
-` sudo nano /etc/nginx/sites-available/publicsite
+`sudo nano /etc/nginx/sites-available/publicsite`
 
 <img width="819" height="465" alt="image" src="https://github.com/user-attachments/assets/cdcd6758-53b9-44de-a5f4-7898d8f0da5b" />
 
