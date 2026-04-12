@@ -115,5 +115,7 @@ Konfiguraatio testattiin:
 
 kun testaus onnistui, Nginx käynnistettiin uudelleen: `sudo systemctl restart nginx`
 
+Lopuksi testasin lopputuloksen avaamalla selaimessa osoitteen http://localhost. Sivusto latautui oikein ja näytti käyttäjän kotihakemistossa olevan sivun sisällön. 
+
 <img width="1283" height="771" alt="image" src="https://github.com/user-attachments/assets/b403c125-34e8-4d6b-bc65-9fbe6ed7c094" />
     
