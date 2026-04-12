@@ -89,9 +89,11 @@ Jotta verkkosivua voisi muokata tavallisena käyttäjänä ilman sudo‑oikeuksi
 
 `nano /home/pyryk/publicsite/index.html`
 
+Hakemiston ja tiedostojen omistajaksi asetettiin käyttäjä pyryk, jolloin muokkaus onnistuu ilman sudoa.
+
 <img width="818" height="424" alt="image" src="https://github.com/user-attachments/assets/f346491b-ee85-47bc-a906-e4963a08d834" />
 
-Hakemiston ja tiedostojen omistajaksi asetettiin käyttäjä, jolla terminaali normaalisti avautuu, jotta sivua voidaan muokata ilman erityisoikeuksia.
+
 
 `sudo nano /etc/nginx/sites-available/publicsite`
 
