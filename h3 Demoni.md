@@ -48,6 +48,7 @@ mkdir -p /home/anteroo/publicsite
 ja loin hakemistolle testisivun:
 
 nano /home/anteroo/publicsite/index.html
+
 <img width="657" height="67" alt="image" src="https://github.com/user-attachments/assets/6468472b-6bd7-4fde-9ab7-ab6758bc7ce6" />
 
 Apache konfigurattion muokkausta varten luotiin uusi Virtualhost konfiguraatio
