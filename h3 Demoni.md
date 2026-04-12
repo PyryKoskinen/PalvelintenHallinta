@@ -77,7 +77,7 @@ chmod o+x /home/anteroo
 chmod o+rx /home/anteroo/publicsite
 ```
 
-## b) Moottorix - Nginx webpalvelimen asennus käsin
+# b) Moottorix - Nginx webpalvelimen asennus käsin
 
 Aloitin tehtävän varmistamalla, että järjestelmä toimi normaalisti ja että aiemmin käytetty Apache‑webpalvelin ei ollut käynnissä. Koska Apache ja Nginx käyttävät oletuksena samaa porttia (80), Apache pysäytettiin ja poistettiin käytöstä ennen Nginxin asentamista. Tämä varmistaa sen, ettei palveluiden välille synny porttiristiriitaa.
 
@@ -119,3 +119,52 @@ Lopuksi testasin lopputuloksen avaamalla selaimessa osoitteen http://localhost. 
 
 <img width="1283" height="771" alt="image" src="https://github.com/user-attachments/assets/b403c125-34e8-4d6b-bc65-9fbe6ed7c094" />
     
+# c) Automoottorix - Nginx‑webpalvelimen automatisointi Ansiblella
+
+Varmistin ensin, että yhteys kohdekoneeseen toimi. Hyödynsin työn pohjana aiemmin tekemääni Ansible-projektia enkä aloittanut alusta. Käytössäni oli valmiiksi luotu perusrakenne (ansible.cfg, hosts.ini, site.yml sekä roles-hakemisto), mikä nopeutti työn käynnistämistä. Tämä vastaa myös käytännön työskentelytapaa, jossa automaatiota kehitetään vaiheittain ja aiempaa työtä hyödyntäen. Lisäksi varmistin, että Apache‑webpalvelin oli sammutettu, jotta se ei varaisi porttia 80.
+
+Lisäsin projektiin uuden roolin nimeltä nginx. Roolille luotiin tarvittavat alihakemistot (tasks, handlers ja files), jotta Nginxin asennus, konfiguraatio ja palvelun hallinta saatiin eroteltua selkeästi toisistaan.
+`mkdir -p roles/nginx/tasks
+mkdir -p roles/nginx/handlers
+mkdir -p roles/nginx/files`
+tarkistin rakenteen: `tree roles/nginx`
+
+<img width="450" height="191" alt="image" src="https://github.com/user-attachments/assets/0ca431e4-7827-4a11-9b45-e5f8cb736185" />
+
+Seuraavaksi loin server block konfiguraation jota ansible käyttää lähdetiedostona. `nano roles/nginx/files/publicsite.conf` Konfiguraatiossa määriteltiin, että Nginx kuuntelee porttia 80 ja käyttää DocumentRootina käyttäjän kotihakemistossa olevaa hakemistoa. Näin HTML sivut voidaan muokata tavallisena käyttäjänä ilman sudo oikeuksia.
+
+<img width="952" height="614" alt="image" src="https://github.com/user-attachments/assets/c3f70b7a-a4bc-4574-94fc-6c2f7eb215ce" />
+
+Sitten luotiin handleri Nginx palvelun uudelleenkäynnistämistä vasten jos konfiguraatio muuttuu: `nano roles/nginx/handlers/main.yml`
+
+<img width="642" height="118" alt="image" src="https://github.com/user-attachments/assets/e9e9fb07-e229-4f48-96d3-e09ccb49aa8b" />
+
+Nginx roolin varsinaiset tehtävät sijoitettiin tiedostoon: `nano roles/nginx/tasks/main.yml`
+
+<img width="950" height="617" alt="image" src="https://github.com/user-attachments/assets/1449876b-9b27-4992-9bc9-e71fcc98f9f7" />
+
+Tehtävät huolehtivat Nginxin asentamisesta, oletussivuston poistamisesta, uuden konfiguraation kopioinnista sekä sivuston käyttöönotosta.
+
+Käytin aiemmin tehtyä site.yml tiedostoa (playbookia) hyväksi ja päivitin sinne siten, että uusi nginx rooli ajetaan: `nano site.yml`
+
+<img width="590" height="163" alt="image" src="https://github.com/user-attachments/assets/07a74746-7193-4889-a322-6548ed4dbeea" />
+Tämäkin rooli suoritetaan become: true asetuksella, koska palvelimen hallinta vaatii ylläpitäjän oikeuksia.
+
+Loin käyttäjän kotihakemistoon hakemiston ja sivun käsin: 
+```bash
+mkdir -p /home/pyryk/publicsite
+nano /home/pyryk/publicsite/index.html
+```
+Ajoin playbookin ja seurasin mahdollisia virheilmoituksia
+´ansible-playbook site.yml --ask-become-pass´
+
+<img width="954" height="390" alt="image" src="https://github.com/user-attachments/assets/17c66c94-1646-4101-8ef6-a5152dbcb43b" />
+
+syntaxi erroreilta selvitty tällä kertaa
+
+Kun playbook oli suoritunut onnistuneesti varmistin vielä että nginx kuunteli porttia 80 ja sivusto aukesi oikein
+`sudo ss -ltnp | grep :80`
+
+<img width="921" height="97" alt="image" src="https://github.com/user-attachments/assets/e2edf345-6f93-489d-8efd-0dffa4f233d9" />
+
+<img width="1283" height="799" alt="image" src="https://github.com/user-attachments/assets/dcc37361-1fb5-4189-bac7-9f28b57d19f2" />
