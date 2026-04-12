@@ -62,7 +62,7 @@ Otin sivuston käyttöön ja poistin oletussivuston käytöstä komennoilla:
 
   sudo systemctl restart apache2 (Käynnistää Apache-palvelimen uudelleen, jotta muutokset tulevat voimaan)
 
-Pikku ongelma ja sen ratkaisu
+**Pikku ongelma ja sen ratkaisu**
 
 Aluksi selain näytti virheen 403 Forbidden.
 
@@ -75,7 +75,8 @@ Ongelma korjattiin helposti komennoilla:
 chmod o+x /home
 chmod o+x /home/anteroo
 chmod o+rx /home/anteroo/publicsite
-``
+
+
 
 
 
