@@ -63,6 +63,8 @@ sudo a2dissite 000-default.conf (Poistaa oletussivuston 000-default.conf käytö
 
 sudo systemctl restart apache2 (Käynnistää Apache-palvelimen uudelleen, jotta muutokset tulevat voimaan)
 
+``
+
 **Pikku ongelma ja sen ratkaisu**
 
 Aluksi selain näytti virheen 403 Forbidden.
