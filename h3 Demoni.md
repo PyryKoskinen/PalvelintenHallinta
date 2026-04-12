@@ -77,6 +77,28 @@ chmod o+x /home/anteroo
 chmod o+rx /home/anteroo/publicsite
 ```
 
+## b) Moottorix - Nginx webpalvelimen asennus käsin
+
+Aloitin tehtävän varmistamalla, että järjestelmä toimi normaalisti ja että aiemmin käytetty Apache‑webpalvelin ei ollut käynnissä. Koska Apache ja Nginx käyttävät oletuksena samaa porttia (80), Apache pysäytettiin ja poistettiin käytöstä ennen Nginxin asentamista. Tämä varmistaa sen, ettei palveluiden välille synny porttiristiriitaa.
+
+Seuraavaksi asensin Nginx webpalvelimen käsin käyttäen järjestelmän paketinhallintaa: `sudo apt install nginx 
+
+Asennuksen jälkeen tarkistin, että Nginx saatiin käynnistettyä ja että se pystyy kuuntelemaan porttia 80. Testasin myös, että Apache ei enää vastannut pyyntöihin ja että Nginx oli ainoa porttia käyttävä palvelu.
+
+Jotta verkkosivua voisi muokata tavallisena käyttäjänä ilman sudo‑oikeuksia, sijoitetin sivuston käyttäjän(pyryk) kotihakemistoon. Loin käyttäjän kotihakemistoon erillisen publicsite hakemiston ja lisäsin sinne index.html‑tiedoston. Jolla pystyi varmistamaan, että oikea sivu latautuu selaimessa. 
+
+`nano /home/pyryk/publicsite/index.html
+
+<img width="818" height="424" alt="image" src="https://github.com/user-attachments/assets/f346491b-ee85-47bc-a906-e4963a08d834" />
+
+Hakemiston ja tiedostojen omistajaksi asetettiin käyttäjä, jolla terminaali normaalisti avautuu, jotta sivua voidaan muokata ilman erityisoikeuksia.
+
+`sudo nano /etc/nginx/sites-available/publicsite
+
+<img width="819" height="465" alt="image" src="https://github.com/user-attachments/assets/cdcd6758-53b9-44de-a5f4-7898d8f0da5b" />
+
+
+<img width="1283" height="771" alt="image" src="https://github.com/user-attachments/assets/b403c125-34e8-4d6b-bc65-9fbe6ed7c094" />
 
 
 
