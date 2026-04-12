@@ -184,3 +184,8 @@ Kun playbook oli suoritunut onnistuneesti varmistin vielä että nginx kuunteli 
 
 <img width="1283" height="799" alt="image" src="https://github.com/user-attachments/assets/dcc37361-1fb5-4189-bac7-9f28b57d19f2" />
 
+## lähteet 
+
+https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_handlers.html
+
+https://terokarvinen.com/apache-ansible/
