@@ -43,7 +43,7 @@ Seuraavaksi oli tavoitteena tehdä sivuston muokkaaminen mahdolliseksi ilman sud
 Apachen oletus DocumentRoot on /var/www/html, jota ei voi muokata tavallisena käyttäjänä.
 Tämän vuoksi luotiin käyttäjän anteroo kotihakemistoon oma hakemisto verkkosivuja varten:
 
-mkdir -p /home/anteroo/publicsite
+`mkdir -p /home/anteroo/publicsite`
 
 Sitten hakemistolle testisivu jonka sisältö näytti tältä: nano /home/anteroo/publicsite/index.html
 
