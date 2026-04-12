@@ -63,7 +63,7 @@ sudo systemctl restart apache2 (Käynnistää Apache-palvelimen uudelleen, jotta
 
 ``
 
-## **Pikku ongelma ja sen ratkaisu**
+# **Pikku ongelma ja sen ratkaisu**
 
 Aluksi selain näytti virheen 403 Forbidden.
 
