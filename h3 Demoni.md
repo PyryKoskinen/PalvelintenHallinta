@@ -97,10 +97,14 @@ Hakemiston ja tiedostojen omistajaksi asetettiin käyttäjä, jolla terminaali n
 
 <img width="819" height="465" alt="image" src="https://github.com/user-attachments/assets/cdcd6758-53b9-44de-a5f4-7898d8f0da5b" />
 
+Tämän jälkeen loin Nginxille oman server block konfiguraation. Konfiguraatiossa määriteltiin DocumentRoot osoittamaan käyttäjän kotihakemistossa olevaan publicsite‑hakemistoon sekä asetettiin index.html oletussivuksi. 
 
 <img width="1283" height="771" alt="image" src="https://github.com/user-attachments/assets/b403c125-34e8-4d6b-bc65-9fbe6ed7c094" />
 
+Lisäksi poistettiin Nginxin oletussivusto käytöstä, jotta selain ei enää näyttäisi järjestelmän mukana tullutta oletussivua.
 
+`sudo rm /etc/nginx/sites_enabled/default`
+`sudo ln -s /etc/nginx/sites-available/publicsite /etc/nginx/sites-enabled/`
 
 
     
