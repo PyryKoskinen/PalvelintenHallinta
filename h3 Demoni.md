@@ -23,7 +23,7 @@ Ansible ratkaisee tämän käyttämällä handlereita.
 Handlerit ovat tehtäviä, jotka suoritetaan vain jos ne saavat notify‑ilmoituksen.
 Jos muutosta ei tapahdu, handleria ei ajeta ollenkaan.
 
-Notifying handlers
+## Notifying handlers
 
 notify‑avainsanalla tehtävä voi ilmoittaa yhden tai useamman handlerin.
 Handlerit suoritetaan vain jos tehtävä aiheuttaa muutoksen (changed).
@@ -31,7 +31,7 @@ Yksi tehtävä voi ilmoittaa useita handlereita.
 Jos sama handler ilmoitetaan useita kertoja, se suoritetaan vain kerran playbook‑ajon aikana.
 Tämä estää turhat palveluiden uudelleenkäynnistykset (esim. Apache restart vain kerran).
 
-Ansible-doc service
+## Ansible-doc service
 
 Service-moduulia käytetään palveluiden hallintaan etäkoneilla. Se toimii eräänlaisena yleiskäyttöisenä rajapintana taustalla olevalle palvelunhallintajärjestelmälle (kuten systemd), eikä kaikki taustajärjestelmät välttämättä tue samoja parametreja.
 
