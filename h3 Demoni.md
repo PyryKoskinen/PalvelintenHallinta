@@ -95,9 +95,11 @@ Hakemiston ja tiedostojen omistajaksi asetettiin käyttäjä pyryk, jolloin muok
 
 
 
-`sudo nano /etc/nginx/sites-available/publicsite`
+
 
 Tämän jälkeen loin Nginxille oman server block konfiguraation. Konfiguraatiossa määriteltiin DocumentRoot osoittamaan käyttäjän kotihakemistossa olevaan publicsite‑hakemistoon sekä asetettiin index.html oletussivuksi. 
+
+`sudo nano /etc/nginx/sites-available/publicsite`
 
 <img width="819" height="465" alt="image" src="https://github.com/user-attachments/assets/cdcd6758-53b9-44de-a5f4-7898d8f0da5b" />
 
