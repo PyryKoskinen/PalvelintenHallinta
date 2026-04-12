@@ -56,12 +56,11 @@ Apache konfigurattion muokkausta varten luotiin uusi Virtualhost konfiguraatio
 
 Otin sivuston käyttöön ja poistin oletussivuston käytöstä komennoilla:
 
-``bash
+```bash
 sudo a2ensite publicsite.conf (ottaa käyttöön sivuston konfiguraation publicsite.conf)
 sudo a2dissite 000-default.conf (Poistaa oletussivuston 000-default.conf käytöstä)
 sudo systemctl restart apache2 (Käynnistää Apache-palvelimen uudelleen, jotta muutokset tulevat voimaan)
-
-``
+```
 
 ## **Pikku ongelma ja sen ratkaisu**
 
@@ -76,7 +75,7 @@ Ongelma korjattiin helposti komennoilla:
 chmod o+x /home
 chmod o+x /home/anteroo
 chmod o+rx /home/anteroo/publicsite
-
+```
 
 
 
