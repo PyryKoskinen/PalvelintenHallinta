@@ -108,5 +108,12 @@ Lisäksi poistettiin Nginxin oletussivusto käytöstä, jotta selain ei enää n
 `sudo rm /etc/nginx/sites_enabled/default`
 `sudo ln -s /etc/nginx/sites-available/publicsite /etc/nginx/sites-enabled/`
 
+## Testaus
+Konfiguraatio testattiin: 
+
+<img width="716" height="53" alt="image" src="https://github.com/user-attachments/assets/8fcb065d-7225-4030-bae4-a6738912cb04" />
+
+kun testaus onnistui, Nginx käynnistettiin uudelleen: `sudo systemctl restart nginx`
+
 <img width="1283" height="771" alt="image" src="https://github.com/user-attachments/assets/b403c125-34e8-4d6b-bc65-9fbe6ed7c094" />
     
