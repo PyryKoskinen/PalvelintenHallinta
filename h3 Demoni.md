@@ -30,6 +30,20 @@ Notifying handlers:
   Jos sama handler ilmoitetaan useita kertoja, se suoritetaan vain kerran playbook‑ajon aikana.
   Tämä estää turhat palveluiden uudelleenkäynnistykset (esim. Apache restart vain kerran).
 
+Ansible-doc service
+
+Service-moduulia käytetään palveluiden hallintaan etäkoneilla. Se toimii eräänlaisena yleiskäyttöisenä rajapintana taustalla olevalle palvelunhallintajärjestelmälle (kuten systemd), eikä kaikki taustajärjestelmät välttämättä tue samoja parametreja.
+
+name: Määrittää palvelun nimen, johon tehtävä kohdistuu.
+
+enabled: määrittää käynnistyykö palvelu systeemin käynnistyksen yhteydessä. boolean-arvo eli true/false. Vähintään toinen, state- tai enabled-määritys vaaditaan aina.
+
+state: Määrittää palvelun tilan eli mitä palvelulle tehdään. started / stopped: idempotentteja, eli tekevät muutoksen vain tarvittaessa
+
+restarted: käynnistää palvelun aina uudelleen
+
+reloaded: lataa asetukset uudelleen ilman täyttä uudelleenkäynnistystä (ei tuettu kaikissa palveluissa)
+
 # a) Apassi – Apache 2:n asennus käsin
 
 Apache2 asennettiin käsin apt paketinhallinnalla. Oletussivun sijaan Apache konfiguroitiin käyttämään käyttäjän kotihakemistossa olevaa
@@ -168,3 +182,4 @@ Kun playbook oli suoritunut onnistuneesti varmistin vielä että nginx kuunteli 
 <img width="921" height="97" alt="image" src="https://github.com/user-attachments/assets/e2edf345-6f93-489d-8efd-0dffa4f233d9" />
 
 <img width="1283" height="799" alt="image" src="https://github.com/user-attachments/assets/dcc37361-1fb5-4189-bac7-9f28b57d19f2" />
+
