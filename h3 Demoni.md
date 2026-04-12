@@ -1,6 +1,6 @@
-# H3 Demoni
+## H3 Demoni
 
-1. Apache installed with ansible
+# 1. Apache installed with ansible
 
 Apache2-webpalvelin asennetaan ja konfiguroidaan automaattisesti Ansiblella.
 
@@ -15,7 +15,7 @@ Sivuston DocumentRoot voidaan asettaa käyttäjän kotihakemistoon, jolloin sivu
 
 Oma huomio: Package file service malli tekee palveluiden hallinnasta selkeää ja toistettavaa, koska asennus, konfigurointi ja käynnistys on erotettu omiin vaiheisiinsa.
 
-2. Handlers: running operations on change
+# 2. Handlers: running operations on change
 
 Joissain tilanteissa tehtävä halutaan suorittaa vain silloin, kun järjestelmään tulee muutos.
 Esimerkiksi palvelu kannattaa käynnistää uudelleen vain jos sen konfiguraatiotiedosto muuttui.
@@ -71,12 +71,11 @@ Apache tarvitsee execute oikeuden (x) kaikkiin hakemistopolun osiin päästäkse
 
 Ongelma korjattiin helposti komennoilla:
 
+```bash
 chmod o+x /home
-
 chmod o+x /home/anteroo
-
 chmod o+rx /home/anteroo/publicsite
-
+``
 
 
 
