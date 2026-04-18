@@ -13,9 +13,9 @@
 
 * Vaikka CM-työkalujen DSL:t sisältävät paljon toimintoja ja sääntöjä, oman resurssiabstraktion rakentaminen ei välttämättä ole niin iso tai monimutkainen juttu kuin aluksi voisi ajatella. Monissa tuotantoympäristöissä toistuvat samat ohjelmalliset mallit, erityisesti pakettien, tiedostojen ja palveluiden määrittelyssä. 
 
-* Puppet-DSL:n käyttöä tarkasteltiin kahdessa laajasti käytössä olevassa tuotantokonfiguraatiossa:
-* Mozilla Release Engineering Puppet Manifests
-* United States Government Configuration Baseline (USGCB)
+- Puppet-DSL:n käyttöä tarkasteltiin kahdessa laajasti käytössä olevassa tuotantokonfiguraatiossa:
+   - Mozilla Release Engineering Puppet Manifests
+   - United States Government Configuration Baseline (USGCB)
 
 
 * Mozilla‑konfiguraatioissa suurin osa käytöstä keskittyi pieneen määrään toimintoja, kuten file, package, service ja exec.
