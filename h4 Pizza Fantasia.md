@@ -153,12 +153,68 @@ Seuraavaksi rikotaan järjestelmä tilan tarkoituksella poistamalla MariaDB palv
 
 <img width="822" height="456" alt="image" src="https://github.com/user-attachments/assets/239c05f2-eeae-470d-a173-2403067b8f1f" />
 
-Poiston jälkeen varmistin, että MariaDB‑demoni ei ollut enää järjestelmässä. Tarkistin palvelun tilan: `systemctl status mariadb`
+Poiston jälkeen varmistin, että MariaDB‑demoni ei ollut enää järjestelmässä. Tarkistin palvelun tilan: 
+- `systemctl status mariadb`
+- `sudo mariadb`
 
 <img width="517" height="32" alt="image" src="https://github.com/user-attachments/assets/d6adc09f-5682-4ffe-b01f-b51a0506984a" />
 
-Tämä osoitti, että palvelu oli poistettu.
+<img width="951" height="36" alt="image" src="https://github.com/user-attachments/assets/61c3c188-64e7-442d-9add-b0831ddff606" />
 
-Playbook korjaus
+Tämä osoitti, että palvelu oli poistettu ja demoni ei vastannut.
+
+Lisäksi tarkistin, että MariaDB palvelin ei ollut käytettävissä: `mariadb --version`
+
+<img width="959" height="34" alt="image" src="https://github.com/user-attachments/assets/95a9490e-d0a9-4a4d-a500-efd32e113c80" />
+
+Tässä kohtaa luulin epäonnistuneeni demonin rikkomisessa, mutta tämä osoitti vain asiakasohjelman version, mikä vahvisti, että palvelinpuoli (demoni) oli poistettu, mutta asiakasohjelma saattoi vielä olla asennettuna erillisenä pakettina.
+
+Kun järjestelmä oli rikottu, en tehnyt mitään käsin korjaavaa toimenpidettä. Ainoa korjaustoimi oli Ansible automaation ajaminen uudelleen. `ansible-playbook site.yml --ask-become-pass`
+
 <img width="1073" height="321" alt="image" src="https://github.com/user-attachments/assets/6576fe44-5d7c-4f6c-9075-04771a416096" />
+
+Ansible suoritti MariaDB roolin tehtävät uudelleen. Automaation avulla MariaDB palvelin ja asiakasohjelma asennettiin takaisin, asetustiedostot palautuivat ja MariaDB demoni käynnistettiin.
+
+Korjauksen onnistumisen todentaminen, playbookin ajon jälkeen tarkistin jälleen palvelun tilan: `systemctl status mariadb`
+
+<img width="1068" height="336" alt="image" src="https://github.com/user-attachments/assets/0b8413a0-d7aa-4b09-a311-423f0d982f31" />
+
+Palvelun tila oli jälleen active (running), mikä osoitti, että demoni oli käynnissä.
+
+Seuraavaksi testasin, että demoni vastaa taas pyyntöihin: `sudo mariadb`
+
+<img width="1070" height="217" alt="image" src="https://github.com/user-attachments/assets/d21d670e-e8e0-4870-aa7a-67ae3b1da4fe" />
+
+Komentotulkki avautui onnistuneesti.
+
+Lisäksi varmistin, että aiemmin määritelty asetus oli palautunut automaation myötä: `SHOW VARIABLES LIKE 'max_connections';`
+
+<img width="1070" height="361" alt="image" src="https://github.com/user-attachments/assets/fafce0fc-5f0b-48f5-bcd1-8fb019dccc33" />
+
+Tästä voidaan todeta että Ansible ei ainoastaan asentanut MariaDB:tä uudelleen, vaan myös palautti asetukset halutun tilan mukaisiksi.
+
+# Lopputulos 
+
+Tehtävä osoitti, että Ansible‑automaatiolla voidaan palauttaa rikottu järjestelmä oikeaan tilaan ilman käsin tehtäviä korjauksia. Ansible‑roolin uudelleenajo palautti palvelimen, asetukset ja demonin käynnin täysin automaattisesti.
+
+Tehtävä auttoi hahmottamaan hyvin automaation todellisen hyödyn: järjestelmän ei tarvitse olla ehjä, jotta se voidaan korjata. Kun haluttu tila on kuvattu Ansible‑roolissa, jopa vakavat virheet, kuten kokonaisen demonin poistaminen, voidaan korjata nopeasti ja luotettavasti. Tämä vähentää manuaalista työtä ja riskiä inhimillisistä virheistä erityisesti tuotantoympäristöissä.
+
+## e) Idempotentti
+
+Idempotentti järjestelmä tarkoittaa sitä, että kun järjestelmä on jo halutussa tilassa, Ansible‑playbookin uudelleenajo ei tee enää muutoksia. Toisin sanoen Ansible ei riko tai muuta toimivaa järjestelmää, vaan tunnistaa, että tila on jo oikein.
+
+Ennen idempotenssin testaamista varmistin, että järjestelmä oli täysin halutussa tilassa d‑tehtävän jälkeen. MariaDB‑demoni oli asennettuna ja käynnissä Ansible‑automaation avulla, ja aiemmin määritelty asetus (max_connections = 50) oli voimassa.
+
+Kun lähtötila oli varmistettu, ajoin saman Ansible‑playbookin uudelleen ilman, että järjestelmään oli tehty käsin mitään muutoksia. `ansible-playbook site.yml --ask-become-pass`
+
+<img width="1075" height="507" alt="image" src="https://github.com/user-attachments/assets/44476bc6-8d70-4f88-aff9-44b261cb2998" />
+
+Playbook suoritettiin samalla tavalla kuin aiemmin. Tällä kertaa Ansible ei kuitenkaan asentanut paketteja uudelleen eikä muuttanut asetuksia, vaan raportoi, että resurssit olivat jo halutussa tilassa.
+
+Playbookin tulosteessa näkyi tyypillisesti, että tehtävät olivat tilassa ok eikä changed. Tämä tarkoittaa, että Ansible tarkisti järjestelmän tilan, mutta ei joutunut tekemään muutoksia.
+Ajoin playbookin vielä toistamiseen varmistaakseni tuloksen:
+
+<img width="1075" height="510" alt="image" src="https://github.com/user-attachments/assets/3f3fe732-464c-41e5-9b9c-2a71a2e0bda9" />
+
+Myös toisella ajokerralla Ansible ei tehnyt muutoksia järjestelmään. Tämä osoitti, että automaatio on idempotentti ja järjestelmä pysyy vakaassa tilassa useiden ajokertojen jälkeen.
 
