@@ -11,16 +11,16 @@
 
 ## 4.12.2 Use of DSL Functions in Case Configuration
 
-* Vaikka CM-työkalujen DSL:t sisältävät paljon toimintoja ja sääntöjä, oman resurssiabstraktion rakentaminen ei välttämättä ole niin iso tai monimutkainen juttu kuin aluksi voisi ajatella. Monissa tuotantoympäristöissä toistuvat samat ohjelmalliset mallit, erityisesti pakettien, tiedostojen ja palveluiden määrittelyssä. 
+* Vaikka CM työkalujen DSL:t sisältävät paljon toimintoja ja sääntöjä, oman resurssiabstraktion rakentaminen ei välttämättä ole niin iso tai monimutkainen juttu kuin aluksi voisi ajatella. Monissa tuotantoympäristöissä toistuvat samat ohjelmalliset mallit, erityisesti pakettien, tiedostojen ja palveluiden määrittelyssä. 
 
-- Puppet-DSL:n käyttöä tarkasteltiin kahdessa laajasti käytössä olevassa tuotantokonfiguraatiossa:
+- Puppet DSL:n käyttöä tarkasteltiin kahdessa laajasti käytössä olevassa tuotantokonfiguraatiossa:
    - Mozilla Release Engineering Puppet Manifests
    - United States Government Configuration Baseline (USGCB)
 
 
-* Mozilla‑konfiguraatioissa suurin osa käytöstä keskittyi pieneen määrään toimintoja, kuten file, package, service ja exec.
+* Mozilla konfiguraatioissa suurin osa käytöstä keskittyi pieneen määrään toimintoja, kuten file, package, service ja exec.
 * Yli 1 % käytetyistä komennoista kattoi noin 87 % kaikesta käytöstä, mikä osoittaa, että vain harvoja toimintoja tarvitaan käytännössä.
-* Tulokset osoittavat, että vaikka CM‑työkalut tarjoavat paljon toimintoja, pieni joukko peruskomentoja kattaa suurimman osan todellisista käyttötapauksista.
+* Tulokset osoittavat, että vaikka CM työkalut tarjoavat paljon toimintoja, pieni joukko peruskomentoja kattaa suurimman osan todellisista käyttötapauksista.
 * Havainnot vastaavat kirjoittajan käytännön kokemuksia Puppet‑ ja Salt‑konfiguraation hallinnan opetuksesta.
 
 ## 4.12.3.1 Dependencies Between Main Functions
@@ -31,7 +31,7 @@
 * Järjestelmän tulee olla idempotentti, eli se tekee muutoksia vain silloin, kun järjestelmä ei ole jo halutussa tilassa.
 * Idempotenttius voidaan toteuttaa tarkistuksilla, esimerkiksi luomalla tiedosto vain, jos sitä ei vielä ole, tai korjaamalla sisältö vain jos se poikkeaa tavoitetilasta.
 * exec ja file ovat järjestelmän perustoiminnot, joiden varaan muut funktiot kuten package, service, user ja group voidaan rakentaa.
-* Korkeamman tason toiminnallisuuksia, kuten cron‑ajastuksia, voidaan toteuttaa näiden perusfunktioiden avulla.
+* Korkeamman tason toiminnallisuuksia, kuten cron ajastuksia, voidaan toteuttaa näiden perusfunktioiden avulla.
 
 ## Tehtävä a) Räpylä – MariaDB‑demonin asennus käsin
 
@@ -54,7 +54,7 @@ Tämän jälkeen suoritin tietokannan perusturvallisuusasetukset käyttäen valm
 
 <img width="466" height="128" alt="image" src="https://github.com/user-attachments/assets/24eb9617-3066-4040-9e9e-dd48c976078a" />
 
-Kuva on suuntaa-antava. Komento `sudo mysql_secure_installation` koskee vanhempaa versiota, joten käytin sen sijaan komentoa `sudo mariadb-secure-installation`. Kuva on peräisin Teron ohjeista
+Kuva on suuntaa antava. Komento `sudo mysql_secure_installation` koskee vanhempaa versiota, joten käytin sen sijaan komentoa `sudo mariadb-secure-installation`. Kuva on peräisin Teron ohjeista
 
 Kun MariaDB oli suojattu, testasin demonin toiminnan kirjautumalla tietokantaan paikallisesti. Kirjauduin root käyttäjänä MariaDB komentotulkkiin:
 
@@ -70,7 +70,7 @@ Kysely palautti MariaDB:n versionumeron, mikä vahvisti, että palvelu toimii od
 
 Tehtävän päätteeksi MariaDB oli asennettu käsin, demoni oli käynnissä ja vastasi pyyntöihin. Palomuuri oli käytössä, ja tietokannan perusasetukset oli kovennettu. Demonin toiminta varmistettiin käytännön testillä, ja se toimi vaatimusten mukaisesti.
 
-Mieleen jäi että demonin asentaminen ei yksin riitä, vaan tietoturva on otettava huomioon heti alusta alkaen. Palomuuri ja root-käyttäjän rajoittaminen ovat olennaisia perusasioita.
+Mieleen jäi että demonin asentaminen ei yksin riitä, vaan tietoturva on otettava huomioon heti alusta alkaen. Palomuuri ja root käyttäjän rajoittaminen ovat olennaisia perusasioita.
 
 ## b) Automaatti – MariaDB‑demonin asennuksen automatisointi Ansiblella
 
