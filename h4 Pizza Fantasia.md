@@ -153,8 +153,11 @@ Seuraavaksi rikotaan järjestelmä tilan tarkoituksella poistamalla MariaDB palv
 
 <img width="822" height="456" alt="image" src="https://github.com/user-attachments/assets/239c05f2-eeae-470d-a173-2403067b8f1f" />
 
-Todista, että järjestelmä on rikki
+Poiston jälkeen varmistin, että MariaDB‑demoni ei ollut enää järjestelmässä. Tarkistin palvelun tilan: `systemctl status mariadb`
+
 <img width="517" height="32" alt="image" src="https://github.com/user-attachments/assets/d6adc09f-5682-4ffe-b01f-b51a0506984a" />
+
+Tämä osoitti, että palvelu oli poistettu.
 
 Playbook korjaus
 <img width="1073" height="321" alt="image" src="https://github.com/user-attachments/assets/6576fe44-5d7c-4f6c-9075-04771a416096" />
