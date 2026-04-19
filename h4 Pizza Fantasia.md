@@ -220,8 +220,8 @@ Myös toisella ajokerralla Ansible ei tehnyt muutoksia järjestelmään. Tämä 
 
 ## Lähteet
 
-https://terokarvinen.com/2018/install-mariadb-on-ubuntu-18-04-database-management-system-the-new-mysql/?fromSearch=mariadb (Luettu 18.4.2026)
-https://westminsterresearch.westminster.ac.uk/download/4cc417566aa9af60fe3826d690719e390abdb7a3c8672f3d51b1eb4ca75e7624/1427236/karvinen-2023-configuration-management-of-distributed-systems.pdf (Kohdat 4.12.1, 4.12.2 ja 4.12.3 luettu 18.4.2026)
-https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/lineinfile_module.html (Luettu 18.4.2026)
-OpenAI. Copilot. käytetty työn tukena komentojen rakenteen hahmottamisessa.
+- https://terokarvinen.com/2018/install-mariadb-on-ubuntu-18-04-database-management-system-the-new-mysql/?fromSearch=mariadb (Luettu 18.4.2026)
+- https://westminsterresearch.westminster.ac.uk/download/4cc417566aa9af60fe3826d690719e390abdb7a3c8672f3d51b1eb4ca75e7624/1427236/karvinen-2023-configuration-management-of-distributed-systems.pdf (Kohdat 4.12.1, 4.12.2 ja 4.12.3 luettu 18.4.2026)
+- https://docs.ansible.com/projects/ansible/latest/collections/ansible/builtin/lineinfile_module.html (Luettu 18.4.2026)
+- OpenAI. Copilot. käytetty työn tukena komentojen rakenteen hahmottamisessa.
 
