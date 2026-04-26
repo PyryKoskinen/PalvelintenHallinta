@@ -24,4 +24,8 @@ Kloonauksen jälkeen siirryin repositorion hakemistoon: `cd sunshine-palvelinhal
 
 Tarkistin että kloonaus onnistui ja että repon sisältö näkyi paikallisesti 
 
+Seuraavaksi tein pienen muutoksen paikallisesti README.md‑tiedostoon. Muokkaus tehtiin tekstieditorilla: `nano README.md`
+
 <img width="823" height="518" alt="image" src="https://github.com/user-attachments/assets/e488fd9b-d1f3-460e-b972-8b6f2b07a6ed" />
+
+Lisäsin tiedostoon uuden rivin, joka kuvaa repositorion käyttötarkoitusta. Tämän jälkeen tallensin muutokset ja suljin editorin.
