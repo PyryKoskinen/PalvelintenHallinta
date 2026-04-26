@@ -8,9 +8,6 @@ Lopuksi tarkistin GitHubin web‑käyttöliittymästä, että varasto näkyy oik
 
 <img width="1342" height="690" alt="image" src="https://github.com/user-attachments/assets/472bc627-c125-459d-a317-a6a28ebd779e" />
 
-<img width="738" height="187" alt="image" src="https://github.com/user-attachments/assets/295295cc-18f9-4d85-8883-50f0498147b0" />
-
-<img width="675" height="169" alt="image" src="https://github.com/user-attachments/assets/bcc6a6d3-0770-4c11-bf33-08f9c215e7b8" />
 
 ## b) Dolly
 
@@ -29,3 +26,11 @@ Seuraavaksi tein pienen muutoksen paikallisesti README.md‑tiedostoon. Muokkaus
 <img width="823" height="518" alt="image" src="https://github.com/user-attachments/assets/e488fd9b-d1f3-460e-b972-8b6f2b07a6ed" />
 
 Lisäsin tiedostoon uuden rivin, joka kuvaa repositorion käyttötarkoitusta. Tämän jälkeen tallensin muutokset ja suljin editorin.
+
+Ennen commitointia tarkistin Gitin tilan: `git status`
+
+<img width="738" height="187" alt="image" src="https://github.com/user-attachments/assets/295295cc-18f9-4d85-8883-50f0498147b0" />
+
+Git ilmoitti, että README.md‑tiedostoa oli muokattu. Tarkistin vielä tarkemmin, mitä muutoksia tiedostoon oli tehty: `git diff`
+
+<img width="675" height="169" alt="image" src="https://github.com/user-attachments/assets/bcc6a6d3-0770-4c11-bf33-08f9c215e7b8" />
