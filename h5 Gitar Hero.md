@@ -37,6 +37,7 @@ Git ilmoitti, että README.md‑tiedostoa oli muokattu. Tarkistin vielä tarkemm
 Kun olin varma muutoksista, lisäsin tiedoston versionhallintaan ja tein commitin:
 ```bash
 git add README.md git 
-commit -m "Update README for sunshine assignment" ```
+commit -m "Update README for sunshine assignment"
+```
 
 Seuraavaksi puskin commitin etävarastoon GitHubiin. GitHub‑autentikointi oli toteutettu SSH‑avaimilla, joten pushaus ei vaatinut käyttäjätunnusta tai salasanaa: `git push`
