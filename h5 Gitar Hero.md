@@ -34,8 +34,9 @@ Git ilmoitti, että README.md‑tiedostoa oli muokattu. Tarkistin vielä tarkemm
 
 <img width="675" height="169" alt="image" src="https://github.com/user-attachments/assets/bcc6a6d3-0770-4c11-bf33-08f9c215e7b8" />
 
-Kun olin varma muutoksista, lisäsin tiedoston versionhallintaan ja tein commitin: ```
-bash git add README.md git 
+Kun olin varma muutoksista, lisäsin tiedoston versionhallintaan ja tein commitin:
+```bash
+git add README.md git 
 commit -m "Update README for sunshine assignment" ```
 
 Seuraavaksi puskin commitin etävarastoon GitHubiin. GitHub‑autentikointi oli toteutettu SSH‑avaimilla, joten pushaus ei vaatinut käyttäjätunnusta tai salasanaa: `git push`
