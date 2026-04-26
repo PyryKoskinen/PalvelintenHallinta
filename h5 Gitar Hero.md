@@ -8,7 +8,6 @@ Lopuksi tarkistin GitHubin web‑käyttöliittymästä, että varasto näkyy oik
 
 <img width="1342" height="690" alt="image" src="https://github.com/user-attachments/assets/472bc627-c125-459d-a317-a6a28ebd779e" />
 
-
 ## b) Dolly
 
 Aloitin tehtävän kopioimalla GitHubin web‑käyttöliittymästä repositorion osoitteen. Käytin repositorion SSH‑osoitetta, jotta GitHub‑autentikointi toimii SSH‑avainten avulla. Kloonaus tehtiin VirtualBox‑virtuaalikoneessa seuraavilla komennoilla: `git clone git@github.com:PyryKoskinen/sunshine-palvelinhallinta.git`
@@ -34,3 +33,6 @@ Ennen commitointia tarkistin Gitin tilan: `git status`
 Git ilmoitti, että README.md‑tiedostoa oli muokattu. Tarkistin vielä tarkemmin, mitä muutoksia tiedostoon oli tehty: `git diff`
 
 <img width="675" height="169" alt="image" src="https://github.com/user-attachments/assets/bcc6a6d3-0770-4c11-bf33-08f9c215e7b8" />
+
+Kun olin varma muutoksista, lisäsin tiedoston versionhallintaan ja tein commitin: ```bash git add README.md git 
+commit -m "Update README for sunshine assignment" ```
