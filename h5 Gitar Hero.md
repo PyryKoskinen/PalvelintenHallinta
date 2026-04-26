@@ -41,3 +41,5 @@ commit -m "Update README for sunshine assignment"
 ```
 
 Seuraavaksi puskin commitin etävarastoon GitHubiin. GitHub‑autentikointi oli toteutettu SSH‑avaimilla, joten pushaus ei vaatinut käyttäjätunnusta tai salasanaa: `git push`
+
+Lopuksi palasin GitHubin web‑käyttöliittymään ja tarkistin repositorion sisällön. README.md‑tiedostossa näkyi tekemäni muutos, ja commit näkyi repositorion commit‑historiassa.
