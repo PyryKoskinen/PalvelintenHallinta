@@ -23,6 +23,8 @@ Lopuksi tarkistin GitHubin web‑käyttöliittymästä, että varasto näkyy oik
 
 Aloitin tehtävän kopioimalla GitHubin web‑käyttöliittymästä repositorion osoitteen. Käytin repositorion SSH‑osoitetta, jotta GitHub‑autentikointi toimii SSH‑avainten avulla. Kloonaus tehtiin VirtualBox‑virtuaalikoneessa seuraavilla komennoilla: `git clone git@github.com:PyryKoskinen/sunshine-palvelinhallinta.git`
 
+<img width="1342" height="690" alt="image" src="https://github.com/user-attachments/assets/472bc627-c125-459d-a317-a6a28ebd779e" />
+
 Kloonauksen jälkeen siirryin repositorion hakemistoon: `cd sunshine-palvelinhallinta`
 
 Tarkistin että kloonaus onnistui ja että repon sisältö näkyi paikallisesti 
