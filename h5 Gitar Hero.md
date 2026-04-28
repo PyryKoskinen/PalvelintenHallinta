@@ -158,3 +158,10 @@ Lopuksi puskin commitit GitHubiin: `git push`
 
 <img width="574" height="188" alt="image" src="https://github.com/user-attachments/assets/30f80893-da12-426e-9922-5813dd9c2849" />
 
+## f) Pari hankittu
+
+## lähteet 
+
+Chacon, S & Straub, B. 2014. Pro Git. 1.3 Getting Started - What is Git? Git. Luettavissa: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F. Luettu: 28.4.2026.
+
+Git. Reference. s.a. Luettavissa: https://git-scm.com/docs. Luettu: 28.4.2026.
