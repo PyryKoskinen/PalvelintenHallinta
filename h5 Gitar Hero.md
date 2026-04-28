@@ -158,6 +158,8 @@ Lopuksi puskin commitit GitHubiin: `git push`
 
 <img width="574" height="188" alt="image" src="https://github.com/user-attachments/assets/30f80893-da12-426e-9922-5813dd9c2849" />
 
+<img width="937" height="654" alt="image" src="https://github.com/user-attachments/assets/7470d889-205a-4c85-befa-58209e7e0b46" />
+
 ## f) Pari hankittu
 
 ## lähteet 
