@@ -106,8 +106,27 @@ Näiden perusteella varmistin, että nimi ja sähköpostiosoite olivat oikein m�
 
 ## e) Gitanbile
 
+Aiemmin tehty Ansible‑kokoonpano sijaitsi eri käyttäjän (anteroo) kotihakemistossa. Kopioin Ansible projektin keskeiset tiedostot sunshinerepositorioon, joka sijaitsi käyttäjän pyryk kotihakemistossa. Kopioitavat tiedostot olivat Ansible projektin ydin: 
+```bash 
+cp /home/anteroo/ansible.cfg .
+cp /home/anteroo/hosts.ini .
+cp /home/anteroo/site.yml .
+cp -r /home/anteroo/roles .
+```
+Koska tiedostot kopioitiin toiselta käyttäjältä, korjasin niiden omistajuuden: `sudo chown -R pyryk:pyryk ansible.cfg hosts.ini site.yml roles`
+
+Tämän jälkeen tarkistin gitin tilan: `git status`
+
 <img width="787" height="228" alt="image" src="https://github.com/user-attachments/assets/47a53575-8c7f-4fa0-8ba1-5c865f6e7671" />
 
+Git tunnisti Ansible‑tiedostot uusina (untracked), mikä osoitti, että ne eivät vielä olleet versionhallinnassa.
+
+Lisäsin Ansible‑tiedostot gitin hallintaan ja tein ensimmäisen commitin: 
+``` bash 
+git add ansible.cfg hosts.ini site.yml roles
+git commit -m "Add Ansible configuration to sunshine repository"
+```
+`git commit -m "Lisää Ansible configuraatio sunshine repositoryyn"`
 
 <img width="673" height="337" alt="image" src="https://github.com/user-attachments/assets/9fbbbe61-7983-4024-bbce-01cb4af2ecbf" />
 
@@ -115,12 +134,17 @@ Näiden perusteella varmistin, että nimi ja sähköpostiosoite olivat oikein m�
 
 <img width="780" height="254" alt="image" src="https://github.com/user-attachments/assets/91459c56-9d7b-4a01-afa2-ce6184840f43" />
 
+Tämän commitin jälkeen Ansible‑kokoonpano oli osa sunshine‑repositiota.
+
+Seuraavaksi tein pienen ja hallitun muutoksen Ansible‑rooliin. Muutin taskin nimeä tiedostossa: `roles/antero/tasks/main.yml`
+
 <img width="804" height="605" alt="image" src="https://github.com/user-attachments/assets/082c5523-5aa0-4a56-b6b4-5503ff23644f" />
+
+Muutos ei muuttanut tehtävän toiminnallisuutta. Tämän jälkeen ajoin Ansible‑playbookin paikallisesti:
 
 `ansible-playbook site.yml --ask-become-pass`
 
 <img width="794" height="103" alt="image" src="https://github.com/user-attachments/assets/2fa04c35-b366-4812-922e-94e7e4df0050" />
-
 
 `git commit -m "Pieni päivitys ansible rooliin"`
 
