@@ -142,11 +142,19 @@ Muutos ei muuttanut tehtävän toiminnallisuutta. Tämän jälkeen ajoin Ansible
 
 <img width="794" height="103" alt="image" src="https://github.com/user-attachments/assets/2fa04c35-b366-4812-922e-94e7e4df0050" />
 
+Playbook suorittui onnistuneesti, mikä osoitti, että muutos ei rikkonut automaatiota.
+
 `git commit -m "Pieni päivitys ansible rooliin"`
 
 <img width="784" height="66" alt="image" src="https://github.com/user-attachments/assets/318a0a19-0324-4446-99d3-bdb71e7057fe" />
 
-`git push`
+Kun muutos oli testattu käytännössä, tallensin sen versionhallintaan: 
+
+```bash
+git add roles/antero/tasks/main.yml
+git commit -m "Improve task naming in anteroo role"
+```
+Lopuksi puskin commitit GitHubiin: `git push`
 
 <img width="574" height="188" alt="image" src="https://github.com/user-attachments/assets/30f80893-da12-426e-9922-5813dd9c2849" />
 
