@@ -121,7 +121,6 @@ Tämän jälkeen tarkistin gitin tilan: `git status`
 
 Git tunnisti Ansible‑tiedostot uusina (untracked), mikä osoitti, että ne eivät vielä olleet versionhallinnassa.
 
-
 Lisäsin Ansible‑tiedostot gitin hallintaan ja tein ensimmäisen commitin: 
 ``` bash 
 git add ansible.cfg hosts.ini site.yml roles
@@ -129,9 +128,6 @@ git commit -m "Lisää Ansible configuraatio sunshine repositoryyn"
 ```
 
 <img width="673" height="337" alt="image" src="https://github.com/user-attachments/assets/9fbbbe61-7983-4024-bbce-01cb4af2ecbf" />
-
-`git commit -m "Add Ansible configuration to sunshine repository"`
-
 <img width="780" height="254" alt="image" src="https://github.com/user-attachments/assets/91459c56-9d7b-4a01-afa2-ce6184840f43" />
 
 Tämän commitin jälkeen Ansible‑kokoonpano oli osa sunshine‑repositiota.
