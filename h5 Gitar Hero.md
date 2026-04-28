@@ -110,3 +110,23 @@ Näiden perusteella varmistin, että nimi ja sähköpostiosoite olivat oikein m�
 
 
 <img width="673" height="337" alt="image" src="https://github.com/user-attachments/assets/9fbbbe61-7983-4024-bbce-01cb4af2ecbf" />
+
+`git commit -m "Add Ansible configuration to sunshine repository"`
+
+<img width="780" height="254" alt="image" src="https://github.com/user-attachments/assets/91459c56-9d7b-4a01-afa2-ce6184840f43" />
+
+<img width="804" height="605" alt="image" src="https://github.com/user-attachments/assets/082c5523-5aa0-4a56-b6b4-5503ff23644f" />
+
+`ansible-playbook site.yml --ask-become-pass`
+
+<img width="794" height="103" alt="image" src="https://github.com/user-attachments/assets/2fa04c35-b366-4812-922e-94e7e4df0050" />
+
+
+`git commit -m "Pieni päivitys ansible rooliin"`
+
+<img width="784" height="66" alt="image" src="https://github.com/user-attachments/assets/318a0a19-0324-4446-99d3-bdb71e7057fe" />
+
+`git push`
+
+<img width="574" height="188" alt="image" src="https://github.com/user-attachments/assets/30f80893-da12-426e-9922-5813dd9c2849" />
+
